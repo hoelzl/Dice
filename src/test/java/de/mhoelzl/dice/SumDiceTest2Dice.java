@@ -8,15 +8,15 @@ import org.junit.jupiter.api.Test;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
-public class AddDiceTest2Dice {
+public class SumDiceTest2Dice {
     private Dice dice;
 
-    AddDiceTest2Dice() {
+    SumDiceTest2Dice() {
         RandomNumberGenerator rng1 = new CyclicRng(2, 5, 1, 6);
         Dice d1 = new RpgDice(2, 6, rng1);
         RandomNumberGenerator rng2 = new CyclicRng(17, 8, 1, 20);
         Dice d2 = new RpgDice(2, 20, rng2);
-        dice = new AddDice(d1, d2);
+        dice = new SumDice(d1, d2);
     }
 
     @Test

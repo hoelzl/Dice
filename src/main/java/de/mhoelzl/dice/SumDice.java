@@ -1,9 +1,9 @@
 package de.mhoelzl.dice;
 
-public class AddDice implements Dice {
+public class SumDice implements Dice {
     private final Dice[] dice;
 
-    public AddDice(Dice... dice) {
+    public SumDice(Dice... dice) {
         this.dice = dice;
     }
 
