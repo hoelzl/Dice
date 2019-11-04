@@ -29,7 +29,7 @@ public class RpgDice implements Dice {
 
     @Override
     public int minValue() {
-        return 0;
+        return numDice * rng.minValue();
     }
 
     @Override
