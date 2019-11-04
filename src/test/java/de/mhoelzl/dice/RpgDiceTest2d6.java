@@ -51,7 +51,8 @@ class RpgDiceTest2d6 {
     }
 
     @Test
-    @DisplayName("maxValue() returns 6")
+    @DisplayName("maxValue() returns 12")
     void maxValue() {
+        assertThat(new RpgDice(2, 6).maxValue(), equalTo(12));
     }
 }

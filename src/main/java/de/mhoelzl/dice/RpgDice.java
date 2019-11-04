@@ -34,6 +34,6 @@ public class RpgDice implements Dice {
 
     @Override
     public int maxValue() {
-        return 0;
+        return numDice * rng.maxValue();
     }
 }
