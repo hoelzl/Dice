@@ -4,7 +4,7 @@ public class CyclicRng implements RandomNumberGenerator {
     private final int[] numbersToGenerate;
     private int index = 0;
 
-    CyclicRng(int... numbersToGenerate) {
+    public CyclicRng(int... numbersToGenerate) {
         if (numbersToGenerate.length == 0) {
             throw new IllegalArgumentException("CyclicRng needs at least one output number");
         }

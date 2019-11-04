@@ -1,6 +1,7 @@
 package de.mhoelzl.dice;
 
-import org.junit.jupiter.api.Disabled;
+import de.mhoelzl.dice.random.CyclicRng;
+import de.mhoelzl.dice.random.RandomNumberGenerator;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -22,18 +23,26 @@ class RpgDiceTest2d6 {
     @Test
     @DisplayName("roll() returns 5 (when individual rolls are 2 and 3)")
     void roll5() {
-        Dice dice = new RpgDice(2, 6);
+        RandomNumberGenerator rng = new CyclicRng(2, 3);
+        Dice dice = new RpgDice(2, 6, rng);
         assertThat(dice.roll(), equalTo(5));
     }
 
-    @Disabled
     @Test
     @DisplayName("roll() returns 2 (when individual rolls are 1 and 1)")
     void roll2() {
-        Dice dice = new RpgDice(2, 6);
+        RandomNumberGenerator rng = new CyclicRng(1);
+        Dice dice = new RpgDice(2, 6, rng);
         assertThat(dice.roll(), equalTo(2));
     }
 
+    @Test
+    @DisplayName("roll() returns 12 (when individual rolls are 6 and 6)")
+    void roll12() {
+        RandomNumberGenerator rng = new CyclicRng(6);
+        Dice dice = new RpgDice(2, 6, rng);
+        assertThat(dice.roll(), equalTo(12));
+    }
 
     @Test
     void minValue() {
