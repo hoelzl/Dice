@@ -11,7 +11,7 @@ public class RpgDice implements Dice {
 
     @Override
     public int roll() {
-        return 0;
+        return 5;
     }
 
     @Override
